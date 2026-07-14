@@ -11,16 +11,16 @@ Understand patient demographics and referral patterns.
 Provide insights to improve resource allocation and patient experience.
 
 TOOLS & TECHNOLOGIES:
-Power BI
-Power Query
-DAX
-Data Modeling
+Power BI,
+Power Query,
+DAX,
+Data Modeling,
 Excel (Data Source)
 
 DASHBOARD KPIs:
-Total Patients
-Average Wait Time
-Average Patient Satisfaction Score
+Total Patients,
+Average Wait Time,
+Average Patient Satisfaction Score,
 Admission vs. Non-Admission Rate
 
 DASHBOARD INSIGHTS:
