@@ -1,21 +1,21 @@
-EMERGENCY ROOM ANALYSIS DASHBOARD | POWER BI
+#EMERGENCY ROOM ANALYSIS DASHBOARD | POWER BI
 
-PROJECT OVERVIEW:
+##PROJECT OVERVIEW:
 This project presents an interactive Emergency Room (ER) Analysis Dashboard built in Power BI using patient data from April 2023 to October 2024. The dashboard helps monitor hospital performance by tracking patient volume, wait times, satisfaction, admissions, referrals, and demographic trends to support data driven operational decisions.
 
-OBJECTIVES:
-Analyze emergency room patient flow and hospital performance.
-Monitor key performance indicators (KPIs).
-Identify peak patient arrival days and hours.
-Understand patient demographics and referral patterns.
-Provide insights to improve resource allocation and patient experience.
+##OBJECTIVES:
+-Analyze emergency room patient flow and hospital performance.
+-Monitor key performance indicators (KPIs).
+-Identify peak patient arrival days and hours.
+-Understand patient demographics and referral patterns.
+-Provide insights to improve resource allocation and patient experience.
 
-TOOLS & TECHNOLOGIES:
-Power BI,
-Power Query,
-DAX,
-Data Modeling,
-Excel (Data Source)
+##TOOLS & TECHNOLOGIES:
+-Power BI,
+-Power Query,
+-DAX,
+-Data Modeling,
+-Excel (Data Source)
 
 DASHBOARD KPIs:
 Total Patients,
