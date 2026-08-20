@@ -56,20 +56,115 @@ Average Satisfaction Score: 4.99 / 10
 - Followed by 20–29 years and 40–49 years
 - Dashboard includes gender and race distribution analysis.
 
-## DASHBOARD PREVIEW:
-<img width="2006" height="1268" alt="image" src="https://github.com/user-attachments/assets/fff075bf-8eec-446c-83ce-857a3086d618" />
+## Data Transformation & Cleaning (Power Query)
 
-## KEY LEARNINGS:
-- KPI Design
-- Interactive Dashboard Development
-- Data Cleaning & Transformation
-- DAX Measures
-- Data Modeling
-- Healthcare Data Analysis
-- Business Insight Generation
+The first step was to load the raw data into **Power Query** for transformation and cleaning.
 
-## FUTURE IMPROVEMENTS:
-- Add forecasting for patient volume.
-- Include doctor and department performance metrics.
-- Integrate live SQL database instead of Excel.
-- Add drill through pages for patient-level analysis.
+---
+
+### 🔶 Data Quality Check
+
+- Checked data quality for the **Patient ID** column — it should be **100% distinct and 100% unique**.
+- **Valid Values:** Verified that the data contains valid and correctly formatted values.
+- **Error Values:** Identified and reviewed any errors present in the data.
+- **Empty Values:** Checked for blank or missing values that may affect the analysis.
+
+> **Important:** The **Date** column must contain 100% valid values, as it is used for Time Intelligence calculations.
+
+---
+
+### 🔶 Data Cleaning
+
+- Identified and reviewed errors and empty values.
+- Used **Replace Values** to correct inconsistent or incorrect data.
+- Ensured the dataset was clean and consistent.
+- Prepared the cleaned data for Data Modeling and DAX calculations.
+
+**Patient Full Name Column**
+Created a new column using *Add Column → Custom Column*:
+
+```DAX
+Patient Full Name = [Patient First Initial] & " " & [Patient Last Name]
+```
+
+**Patient Gender Column**
+The source data contained only `M` and `F` abbreviations. Used **Replace Values** to standardize:
+
+| Original Value | Replaced With |
+|---|---|
+| M | Male |
+| F | Female |
+| (blank/unclear) | Not Confirmed (NC) |
+
+---
+
+### 🔶 Creating a Dynamic Calendar (Date) Table
+
+The hospital dataset may contain missing dates, which can lead to inaccurate Time Intelligence calculations. Creating a dedicated **Calendar Table** ensures continuous dates and enables functions like YTD, MTD, PYTD, and YoY to work correctly.
+
+**Step 1 — Create the Date Table**
+`Modeling → New Table`
+
+```DAX
+Date Table = CALENDAR(MIN('Hospital ER_Data'[Patient Admission Date]), MAX('Hospital ER_Data'[Patient Admission Date]))
+```
+
+**Step 2 — Create Date Attributes**
+
+🔶 **Day Name**
+```DAX
+Day Name = FORMAT('Date Table'[Date], "ddd")
+```
+
+🔶 **Year**
+```DAX
+Year = YEAR('Date Table'[Date])
+```
+
+🔶 **Week Day**
+```DAX
+Week Day = WEEKDAY('Date Table'[Date], 2)
+```
+
+🔶 **Month Number**
+```DAX
+Month Number = MONTH('Date Table'[Date])
+```
+
+🔶 **Month Name**
+```DAX
+Month Name = FORMAT('Date Table'[Date], "mmm")
+```
+
+🔶 **Month & Year**
+```DAX
+Month & Year = 'Date Table'[Month Name] & " " & 'Date Table'[Year]
+```
+
+**Step 3 — Data Modeling**
+
+Created a relationship between the **Date Table** and the **Hospital ER Data** table:
+
+| From | To | Relationship |
+|---|---|---|
+| Date Table (1) | Hospital ER Data (Fact Table) (*) | One-to-Many |
+
+This relationship enables all Time Intelligence functions to calculate correctly.
+
+---
+
+## Creating Measures for KPI's
+
+---
+
+### 🔶 KPI 1: Number of Patients
+
+```DAX
+No of Patients = DISTINCTCOUNT('Hospital ER_Data'[Patient Id])
+```
+
+**Visualization:** Area Chart (Sparkline)
+- **X-Axis:** Date (Day)
+- **Y-Axis:** No of Patients
+
+This visual helps track the daily trend in patient visits, allowing identification of peak days and seasonal patterns.
