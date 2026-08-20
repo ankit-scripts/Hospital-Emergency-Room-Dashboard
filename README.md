@@ -153,18 +153,80 @@ This relationship enables all Time Intelligence functions to calculate correctly
 
 ---
 
-## Creating Measures for KPI's
+## KPI Requirements & DAX Measures
+
+To enhance operational efficiency and provide actionable insights into emergency room performance, this dashboard tracks four core KPIs — enabling stakeholders to make data-driven decisions regarding patient management and service optimization.
+
+Each KPI is paired with a **daily trend (area sparkline)** to help identify patterns, peak periods, and operational anomalies.
 
 ---
 
 ### 🔶 KPI 1: Number of Patients
 
+Measures the total number of patients visiting the ER daily.
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/81f9ed3b-9db1-413c-8d4b-5a0e17ae591a" />
+
+<p>
+
 ```DAX
 No of Patients = DISTINCTCOUNT('Hospital ER_Data'[Patient Id])
 ```
 
-**Visualization:** Area Chart (Sparkline)
+**Chart:** Area Chart
 - **X-Axis:** Date (Day)
-- **Y-Axis:** No of Patients
+- **Y-Axis:** No. of Patients
 
-This visual helps track the daily trend in patient visits, allowing identification of peak days and seasonal patterns.
+---
+
+### 🔶 KPI 2: Average Wait Time
+
+Calculates the average time patients wait before being attended to by a medical professional.
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/7d51af59-81eb-45d5-ae89-4bc02f5dbc14" />
+
+<p>
+  
+```DAX
+Avg Wait Time = FORMAT(AVERAGE('Hospital ER_Data'[Patient Waittime]), "0.0")
+```
+
+**Chart:** Area Chart
+- **X-Axis:** Date (Day)
+- **Y-Axis:** Average Patient Wait Time
+
+---
+
+### 🔶 KPI 3: Patient Satisfaction Score
+
+Analyzes the average satisfaction score of patients daily to evaluate quality of service.
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/e67bd8a6-0735-433c-9352-2a1bb44c575e" />
+
+<p>
+  
+```DAX
+Satisfaction Score = AVERAGE('Hospital ER_Data'[Patient Satisfaction Score])
+```
+
+**Chart:** Area Chart
+- **X-Axis:** Date (Day)
+- **Y-Axis:** Average Patient Satisfaction Score
+
+---
+
+### 🔶 KPI 4: Number of Patients Referred
+
+Counts the number of patients referred to specific departments from the ER each day.
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/fded5c12-d9e0-4a0d-8088-a01804520997" />
+
+<p>
+  
+```DAX
+No. of Patients Referred = CALCULATE(COUNTROWS('Hospital ER_Data'), 'Hospital ER_Data'[Department Referral] <> "None")
+```
+
+**Chart:** Area Chart
+- **X-Axis:** Date (Day)
+- **Y-Axis:** No. of Patients Referred
