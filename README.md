@@ -274,3 +274,63 @@ A **bar chart** was added below the matrix to visualize No. of Patients by Admis
 
 ---
 
+### 🔶 2. Patient Age Distribution
+
+**Chart Type:** Clustered Column Chart
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/e0c411f7-403a-4125-ae60-1f800196fdff" />
+
+<p>
+
+A calculated column named **Age Group** was created to bucket patients into 10-year age intervals.
+
+```DAX
+Age Group = 
+SWITCH(
+    TRUE(),
+    'Hospital ER_Data'[Patient Age] >= 100, "100+",
+    'Hospital ER_Data'[Patient Age] >= 90, "90-99",
+    'Hospital ER_Data'[Patient Age] >= 80, "80-89",
+    'Hospital ER_Data'[Patient Age] >= 70, "70-79",
+    'Hospital ER_Data'[Patient Age] >= 60, "60-69",
+    'Hospital ER_Data'[Patient Age] >= 50, "50-59",
+    'Hospital ER_Data'[Patient Age] >= 40, "40-49",
+    'Hospital ER_Data'[Patient Age] >= 30, "30-39",
+    'Hospital ER_Data'[Patient Age] >= 20, "20-29",
+    'Hospital ER_Data'[Patient Age] >= 10, "10-19",
+    "0-9"
+)
+```
+
+**Chart Configuration:**
+- **X-Axis:** Age Group
+- **Y-Axis:** No. of Patients
+
+**Conditional Formatting (Gradient):**
+Applied gradient color formatting so that higher age groups appear darker and lower age groups appear lighter, making the distribution visually intuitive.
+- **Format Style:** Gradient
+- **Field Basis:** No. of Patients
+
+---
+
+### 🔶 3. Department Referrals
+
+**Chart Type:** Clustered Bar Chart
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/ac37cddd-0998-439f-a8bc-73b8445e68d4" />
+
+<p>
+  
+Visualizes referral trends across different departments to identify which specialties receive the highest ER referrals, enabling better resource allocation.
+
+**Chart Configuration:**
+- **X-Axis:** No. of Patients
+- **Y-Axis:** Department Referral
+
+**Conditional Formatting (Gradient):**
+Applied gradient color formatting so that departments with higher referral counts appear darker and lower referral counts appear lighter.
+- **Format Style:** Gradient
+- **Field Basis:** No. of Patients
+
+---
+
