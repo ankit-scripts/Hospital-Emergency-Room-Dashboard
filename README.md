@@ -230,3 +230,44 @@ No. of Patients Referred = CALCULATE(COUNTROWS('Hospital ER_Data'), 'Hospital ER
 **Chart:** Area Chart
 - **X-Axis:** Date (Day)
 - **Y-Axis:** No. of Patients Referred
+
+---
+
+## Dashboard 1: Monthly View
+
+**Objective:** Monitor key metrics and trends on a month-by-month basis to identify patterns and areas for improvement.
+
+**Charts to Develop:**
+1. Patient Admission Status — Track admitted vs. non-admitted patients.
+2. Patient Age Distribution — Group patients by 10-year age intervals.
+3. Department Referrals — Analyze referral trends across different departments.
+4. Timeliness — Measure the percentage of patients seen within 30 minutes.
+5. Gender Analysis — Visualize patient distribution by gender.
+6. Racial Demographics — Analyze patient data by race.
+7. Time Analysis — Assess patient volume by day and hour.
+
+---
+
+### 🔶 1. Patient Admission Status
+
+**Chart Type:** Matrix + Bar Chart
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/50e833cb-e09c-46a4-8130-4efde3d4d2e5" />
+
+<p>
+
+Since the `Patient Admission Flag` field only contains `True`/`False`, a measure was created to convert it into a readable **Admitted / Not Admitted** status.
+
+```DAX
+Admission Status = IF('Hospital ER_Data'[Patient Admission Flag] = TRUE, "Admitted", "Not Admitted")
+```
+
+**Matrix Configuration:**
+- **Rows:** Admission Status
+- **Values:**
+  - Patient (No. of Patients)
+  - % of Total (% No. of Patients)
+
+A **bar chart** was added below the matrix to visualize No. of Patients by Admission Status:
+- **X-Axis:** No. of Patients
+- **Y-Axis:** Admission Status
