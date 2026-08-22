@@ -334,3 +334,23 @@ Applied gradient color formatting so that departments with higher referral count
 
 ---
 
+### 🔶 4. Timeliness — Patients Seen Under 30 Minutes
+
+**Chart Type:** Donut Chart
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/cc0ffbe8-9ef6-4464-ae28-14c74c453d8e" />
+
+<p> 
+
+A measure was created to classify each patient visit based on whether they were seen within the 30-minute target.
+
+```DAX
+Wait Time Status = IF('Hospital ER_Data'[Patient Waittime] <= 30, "Within Target", "Target Missed")
+```
+
+**Chart Configuration:**
+- **Legend:** Wait Time Status
+- **Values:** No. of Patients
+
+---
+
