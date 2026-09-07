@@ -341,3 +341,105 @@ Wait Time Status = IF('Hospital ER_Data'[Patient Waittime] <= 30, "Within Target
 
 ---
 
+### 🔶 5. Gender Analysis: Visualize patient distribution by gender.
+
+**Chart Type:** Donut Chart
+
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/078cc70f-c2b6-46da-a07b-de4d8b951923" />
+
+<p> 
+
+The donut chart provides a clear view of the proportion of patients across different gender categories, making it easy to compare the overall gender distribution of ER visits.
+
+**Chart Configuration:**
+- **Legend:** Patient Gender
+- **Values:** No. of Patients
+
+---
+
+### 🔶 6. Racial Demographics
+
+**Chart Type:** Clustered Bar Chart
+
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/019a6def-7a03-42e9-9c3e-b97f1754b9d5" />
+
+<p>
+
+The clustered bar chart makes it easy to compare patient volumes across racial categories and identify groups with higher or lower ER visit counts.
+
+**Chart Configuration:**
+- **X-Axis:** No. of Patients
+- **Y-Axis:** Patient Race
+
+---
+
+### 🟪 7. Time Analysis — Patient Volume by Day and Hour
+
+**Chart Type:** Matrix + Stacked Column Chart
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/615ccaa1-b656-4e73-9fe3-4fb3c6d46432" />
+
+<p>
+
+Assesses patient volume by day and hour to identify peak arrival times, helping optimize staffing and resource allocation.
+
+---
+
+#### Supporting Columns
+
+A calculated column named **Admission Hour** was created to extract the hour from the admission timestamp.
+
+```DAX
+Admission Hour = HOUR('Hospital ER_Data'[Patient Admission Date])
+```
+
+A second calculated column named **Wait Time Interval** was created to bucket hours into 2-hour intervals.
+
+```DAX
+Wait Time Interval = 
+SWITCH(
+    TRUE(),
+    'Hospital ER_Data'[Admission Hour] < 2,  "00-02",
+    'Hospital ER_Data'[Admission Hour] < 4,  "03-04",
+    'Hospital ER_Data'[Admission Hour] < 6,  "05-06",
+    'Hospital ER_Data'[Admission Hour] < 8,  "07-08",
+    'Hospital ER_Data'[Admission Hour] < 10, "09-10",
+    'Hospital ER_Data'[Admission Hour] < 12, "11-12",
+    'Hospital ER_Data'[Admission Hour] < 14, "13-14",
+    'Hospital ER_Data'[Admission Hour] < 16, "15-16",
+    'Hospital ER_Data'[Admission Hour] < 18, "17-18",
+    'Hospital ER_Data'[Admission Hour] < 20, "19-20",
+    'Hospital ER_Data'[Admission Hour] < 22, "21-22",
+    'Hospital ER_Data'[Admission Hour] < 24, "23-24",
+    "Above 24"
+)
+```
+
+---
+
+#### 🟪 1. Matrix — Hourly Distribution by Day
+
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/9b77683e-2a8c-4c94-a6e7-6c5db67db350" />
+
+<p> 
+  
+**Matrix Configuration:**
+- **Rows:** Wait Time Interval (Hours)
+- **Columns:** Day Name
+- **Values:** No. of Patients
+
+**Sorting:**
+Sorted the **Day Name** column by a custom day-order column (Sort by Column) so days appear in chronological order — Monday through Sunday — instead of alphabetical order.
+
+
+#### 🟪 2. Stacked Column Chart — Daily Volume
+
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/0a9bf4d3-4504-4d7d-93c4-60c47e3a65db" />
+
+<p> 
+
+**Chart Configuration:**
+- **X-Axis:** Day Name
+- **Y-Axis:** No. of Patients
+
+---
