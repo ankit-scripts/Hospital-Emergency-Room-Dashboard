@@ -470,3 +470,129 @@ Sorted the **Day Name** column by a custom day-order column (Sort by Column) so 
 This table enables users to drill down into individual patient records and supports detailed operational analysis through dashboard filters and slicers.
 
 ---
+
+## Dashboard 4: Key Takeaways
+
+**Objective:** Summarize the major findings from the Emergency Room analysis and provide actionable insights to improve patient flow, resource allocation, and overall patient experience.
+
+---
+
+### 🔶 Key Findings
+
+#### **1. Patient Volume**
+
+The Emergency Room dataset covers **19 months**, from **April 2023 to October 2024**, and contains **9,216 unique patients**.
+
+The overall patient volume indicates a consistent demand for emergency room services and highlights the importance of effective resource planning.
+
+---
+
+#### **2. Patient Wait Time & Satisfaction**
+
+- **Average Wait Time:** 35.3 minutes
+- **Average Satisfaction Score:** 4.99 / 10
+
+The average wait time of **35.3 minutes** indicates an opportunity to improve patient flow and reduce waiting periods. The satisfaction score of **4.99 out of 10** also indicates that patient experience can be improved.
+
+Reducing waiting time and improving service efficiency could have a positive impact on overall patient satisfaction.
+
+---
+
+#### **3. Department Referrals**
+
+A significant number of patients (**5,400**) did not require a department referral.
+
+Among the referred patients, the most common referrals were:
+
+- **General Practice:** 1,840 patients
+- **Orthopedics:** 995 patients
+- **Physiotherapy:** 276 patients
+- **Cardiology:** 248 patients
+
+General Practice and Orthopedics account for a substantial share of department referrals, indicating that these departments may require adequate staffing and resource availability during high-demand periods.
+
+---
+
+#### **4. Peak Busy Periods**
+
+The busiest days were:
+
+- **Monday:** 1,377 patients
+- **Saturday:** 1,322 patients
+- **Tuesday:** 1,318 patients
+
+The busiest admission hours were:
+
+- **11 AM**
+- **1 PM**
+- **7 PM**
+- **11 PM**
+
+These patterns indicate that staffing and operational resources should be planned according to patient arrival trends rather than being distributed evenly throughout the day.
+
+---
+
+#### **5. Patient Demographics**
+
+The **30–39 years** age group recorded the highest number of patients with **1,200 visits**, followed by:
+
+- **20–29 years:** 1,188 patients
+- **40–49 years:** Significant patient volume
+
+The dashboard also provides insights into **gender and racial distribution**, helping stakeholders understand the demographic composition of ER visitors.
+
+---
+
+#### **6. Race Distribution**
+
+The largest racial groups recorded were:
+
+- **White:** 2,571 patients
+- **African American:** 1,951 patients
+- **Two or More Races:** 1,557 patients
+- **Asian:** 1,060 patients
+
+A significant number of patients (**1,030**) did not identify or provide a race category.
+
+This demographic information can help stakeholders understand patient composition and support more informed healthcare service planning.
+
+---
+
+#### **7. Admission Patterns**
+
+The ER recorded almost an equal split between admitted and non-admitted patients:
+
+- **Admitted:** 4,612 patients
+- **Not Admitted:** 4,604 patients
+
+Approximately **50% of ER patients were admitted**, while the remaining patients were treated and released.
+
+This near-even distribution highlights the importance of maintaining sufficient capacity for both emergency treatment and inpatient admissions.
+
+---
+
+### 🔶 Business Insights & Recommendations
+
+Based on the analysis, the following areas can help improve Emergency Room operations:
+
+- **Optimize staffing:** Increase staff availability during peak days such as Monday, Saturday, and Tuesday and during high-volume hours such as 11 AM, 1 PM, 7 PM, and 11 PM.
+
+- **Reduce patient wait time:** Analyze patient flow and staffing levels to identify bottlenecks contributing to the **35.3-minute average wait time**.
+
+- **Focus on high-referral departments:** General Practice and Orthopedics receive the highest number of referrals. Resource planning for these departments can help manage patient demand more effectively.
+
+- **Improve patient experience:** The **4.99/10 average satisfaction score** indicates an opportunity to improve service quality, waiting time, communication, and overall patient experience.
+
+- **Plan admission capacity:** Since approximately half of the ER patients are admitted, hospital resources should be planned to accommodate both ER treatment and subsequent inpatient demand.
+
+- **Use demographic insights for planning:** Age, gender, and race distributions can help stakeholders understand the patient population and support more targeted resource planning.
+
+---
+
+### 🔶 Overall Summary
+
+The analysis shows that the Emergency Room handles a **high volume of patients**, with an average wait time of **35.3 minutes** and an average satisfaction score of **4.99/10**. General Practice and Orthopedics are the most common referral departments, while **Monday, Saturday, and Tuesday** experience the highest patient volumes.
+
+The near-equal split between admitted and non-admitted patients further emphasizes the need for effective capacity planning. Overall, the dashboard provides a data-driven view of **patient flow, operational efficiency, referral patterns, demographics, and admission trends**, helping stakeholders identify opportunities to improve staffing, reduce waiting times, optimize resources, and enhance patient care.
+
+---
