@@ -10,44 +10,10 @@ This project presents an interactive Emergency Room (ER) Analysis Dashboard buil
 - Understand patient demographics and referral patterns.
 - Provide insights to improve resource allocation and patient experience.
 
-## DASHBOARD INSIGHTS:
-Patient Flow
-Total Patients: 9,216
-Average Wait Time: 35.3 minutes
-Average Satisfaction Score: 4.99 / 10
-
-## Admissions
-- Admitted Patients: 4,612
-- Not Admitted: 4,604
-
-## Department Referrals
-- General Practice: 1,840
-- Orthopedics: 995
-- Physiotherapy: 276
-- Cardiology: 248
-- No Referral Required: 5,400
-
-## Busiest Days
-- Monday
-- Saturday
-- Tuesday
-
-## Peak Hours
-- 11 AM
-- 1 PM
-- 7 PM
-- 11 PM
-
-## Patient Demographics
-- Highest patient volume: 30–39 years
-- Followed by 20–29 years and 40–49 years
-- Dashboard includes gender and race distribution analysis.
-
 ## Data Transformation & Cleaning (Power Query)
 
 The first step was to load the raw data into **Power Query** for transformation and cleaning.
 
----
 
 ### 🔶 Data Quality Check
 
