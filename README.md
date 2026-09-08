@@ -239,7 +239,7 @@ No. of Patients Referred = CALCULATE(COUNTROWS('Hospital ER_Data'), 'Hospital ER
 
 **Chart Type:** Matrix + Bar Chart
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/50e833cb-e09c-46a4-8130-4efde3d4d2e5" />
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/50e833cb-e09c-46a4-8130-4efde3d4d2e5" />
 
 <p>
 
@@ -265,7 +265,7 @@ A **bar chart** was added below the matrix to visualize No. of Patients by Admis
 
 **Chart Type:** Clustered Column Chart
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/e0c411f7-403a-4125-ae60-1f800196fdff" />
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/e0c411f7-403a-4125-ae60-1f800196fdff" />
 
 <p>
 
@@ -304,7 +304,7 @@ Applied gradient color formatting so that higher age groups appear darker and lo
 
 **Chart Type:** Clustered Bar Chart
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/ac37cddd-0998-439f-a8bc-73b8445e68d4" />
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/ac37cddd-0998-439f-a8bc-73b8445e68d4" />
 
 <p>
   
@@ -325,7 +325,7 @@ Applied gradient color formatting so that departments with higher referral count
 
 **Chart Type:** Donut Chart
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/cc0ffbe8-9ef6-4464-ae28-14c74c453d8e" />
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/cc0ffbe8-9ef6-4464-ae28-14c74c453d8e" />
 
 <p> 
 
@@ -373,17 +373,16 @@ The clustered bar chart makes it easy to compare patient volumes across racial c
 
 ---
 
-### 🟪 7. Time Analysis — Patient Volume by Day and Hour
+### 🔶 7. Time Analysis — Patient Volume by Day and Hour
 
 **Chart Type:** Matrix + Stacked Column Chart
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/615ccaa1-b656-4e73-9fe3-4fb3c6d46432" />
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/615ccaa1-b656-4e73-9fe3-4fb3c6d46432" />
 
 <p>
 
 Assesses patient volume by day and hour to identify peak arrival times, helping optimize staffing and resource allocation.
 
----
 
 #### Supporting Columns
 
@@ -417,7 +416,7 @@ SWITCH(
 
 ---
 
-#### 🟪 1. Matrix — Hourly Distribution by Day
+#### 🔸(i) Matrix - Hourly Distribution by Day
 
 <img width="350" alt="image" src="https://github.com/user-attachments/assets/9b77683e-2a8c-4c94-a6e7-6c5db67db350" />
 
@@ -432,7 +431,7 @@ SWITCH(
 Sorted the **Day Name** column by a custom day-order column (Sort by Column) so days appear in chronological order — Monday through Sunday — instead of alphabetical order.
 
 
-#### 🟪 2. Stacked Column Chart — Daily Volume
+#### 🔸(ii) Stacked Column Chart - Daily Volume
 
 <img width="350" alt="image" src="https://github.com/user-attachments/assets/0a9bf4d3-4504-4d7d-93c4-60c47e3a65db" />
 
@@ -441,5 +440,33 @@ Sorted the **Day Name** column by a custom day-order column (Sort by Column) so 
 **Chart Configuration:**
 - **X-Axis:** Day Name
 - **Y-Axis:** No. of Patients
+
+---
+
+## Dashboard 3: Patient Details
+
+**Objective:** Provide granular, patient-level information for detailed analysis, record verification, and operational troubleshooting by displaying essential patient details in a comprehensive table for filtering and analysis of individual ER visits.
+
+**Chart Type:** Table
+
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/0a17e3ce-05f0-4d0b-a62b-eb39f8177fa3" />
+
+<p>
+
+### Chart Configuration
+
+| Column | Description |
+|---|---|
+| **Patient ID** | Unique identifier for each patient |
+| **Patient Full Name** | Patient's full name |
+| **Gender** | Male, Female, or Not Confirmed |
+| **Age** | Patient age at admission |
+| **Admission Date** | Date of ER admission |
+| **Admission Status** | Admitted or Not Admitted |
+| **Wait Time** | Patient wait time (minutes) |
+| **Department Referral** | Referred medical department |
+| **Patient Race** | Patient racial demographic |
+
+This table enables users to drill down into individual patient records and supports detailed operational analysis through dashboard filters and slicers.
 
 ---
