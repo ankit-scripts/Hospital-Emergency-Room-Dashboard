@@ -221,9 +221,20 @@ Admission Status = IF('Hospital ER_Data'[Patient Admission Flag] = TRUE, "Admitt
   - Patient (No. of Patients)
   - % of Total (% No. of Patients)
 
-A **bar chart** was added below the matrix to visualize No. of Patients by Admission Status:
+A **bar chart** was added after the matrix to visualize No. of Patients by Admission Status:
 - **X-Axis:** No. of Patients
 - **Y-Axis:** Admission Status
+
+### 🔶 Key Findings
+
+The ER recorded almost an equal split between admitted and non-admitted patients:
+
+- **Admitted:** 4,612 patients
+- **Not Admitted:** 4,604 patients
+
+Approximately **50% of ER patients were admitted**, while the remaining patients were treated and released.
+
+This near-even distribution highlights the importance of maintaining sufficient capacity for both emergency treatment and inpatient admissions.
 
 ---
 
@@ -264,6 +275,15 @@ Applied gradient color formatting so that higher age groups appear darker and lo
 - **Format Style:** Gradient
 - **Field Basis:** No. of Patients
 
+### 🔶 Key Findings
+
+The **30–39 years** age group recorded the highest number of patients with **1,200 visits**, followed by:
+
+- **20–29 years:** 1,188 patients
+- **40–49 years:** Significant patient volume
+
+The dashboard also provides insights into **gender and racial distribution**, helping stakeholders understand the demographic composition of ER visitors.
+
 ---
 
 ### 🔶 3. Department Referrals
@@ -285,6 +305,19 @@ Applied gradient color formatting so that departments with higher referral count
 - **Format Style:** Gradient
 - **Field Basis:** No. of Patients
 
+### 🔶 Key Findings
+
+A significant number of patients (**5,400**) did not require a department referral.
+
+Among the referred patients, the most common referrals were:
+
+- **General Practice:** 1,840 patients
+- **Orthopedics:** 995 patients
+- **Physiotherapy:** 276 patients
+- **Cardiology:** 248 patients
+
+General Practice and Orthopedics account for a substantial share of department referrals, indicating that these departments may require adequate staffing and resource availability during high demand periods.
+
 ---
 
 ### 🔶 4. Timeliness — Patients Seen Under 30 Minutes
@@ -305,6 +338,10 @@ Wait Time Status = IF('Hospital ER_Data'[Patient Waittime] <= 30, "Within Target
 - **Legend:** Wait Time Status
 - **Values:** No. of Patients
 
+### 🔶 Key Findings
+
+The average waiting time in the ER was around 35.3 minutes, showing there is still room to streamline processes and improve patient flow. 
+
 ---
 
 ### 🔶 5. Gender Analysis: Visualize patient distribution by gender.
@@ -321,6 +358,7 @@ The donut chart provides a clear view of the proportion of patients across diffe
 - **Legend:** Patient Gender
 - **Values:** No. of Patients
 
+### 🔶 Key Findings
 ---
 
 ### 🔶 6. Racial Demographics
@@ -337,6 +375,19 @@ The clustered bar chart makes it easy to compare patient volumes across racial c
 - **X-Axis:** No. of Patients
 - **Y-Axis:** Patient Race
 
+### 🔶 Key Findings
+
+The largest racial groups recorded were:
+
+- **White:** 2,571 patients
+- **African American:** 1,951 patients
+- **Two or More Races:** 1,557 patients
+- **Asian:** 1,060 patients
+
+A significant number of patients (**1,030**) did not identify or provide a race category.
+
+This demographic information can help stakeholders understand patient composition and support more informed healthcare service planning.
+
 ---
 
 ### 🔶 7. Time Analysis — Patient Volume by Day and Hour
@@ -348,7 +399,6 @@ The clustered bar chart makes it easy to compare patient volumes across racial c
 <p>
 
 Assesses patient volume by day and hour to identify peak arrival times, helping optimize staffing and resource allocation.
-
 
 #### Supporting Columns
 
@@ -406,6 +456,23 @@ Sorted the **Day Name** column by a custom day-order column (Sort by Column) so 
 **Chart Configuration:**
 - **X-Axis:** Day Name
 - **Y-Axis:** No. of Patients
+
+### 🔶 Key Findings
+
+The busiest days were:
+
+- **Monday:** 1,377 patients
+- **Saturday:** 1,322 patients
+- **Tuesday:** 1,318 patients
+
+The busiest admission hours were:
+
+- **11 AM**
+- **1 PM**
+- **7 PM**
+- **11 PM**
+
+These patterns indicate that staffing and operational resources should be planned according to patient arrival trends rather than being distributed evenly throughout the day.
 
 ---
 
