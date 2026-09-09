@@ -320,7 +320,7 @@ General Practice and Orthopedics account for a substantial share of department r
 
 ---
 
-### 🔶 4. Timeliness — Patients Seen Under 30 Minutes
+### 🔶 4. Timeliness - Patients Seen Under 30 Minutes
 
 **Chart Type:** Donut Chart
 
@@ -340,7 +340,17 @@ Wait Time Status = IF('Hospital ER_Data'[Patient Waittime] <= 30, "Within Target
 
 ### 🔶 Key Findings
 
-The average waiting time in the ER was around 35.3 minutes, showing there is still room to streamline processes and improve patient flow. 
+- **Average Wait Time:** 35.3 minutes
+- **Target Wait Time:** 30 minutes
+
+The timeliness analysis shows that the majority of patients were **not seen within the 30-minute target** in both years.
+
+- **2023:** 42% of patients were seen within the target time, while **58% exceeded the 30-minute target**.
+- **2024:** 39.5% of patients were seen within the target time, while **60.5% exceeded the 30-minute target**.
+
+The percentage of patients meeting the target **decreased from 42% in 2023 to 39.5% in 2024**, while the percentage missing the target increased from **58% to 60.5%**.
+
+With an overall average wait time of **35.3 minutes**, the results indicate an opportunity to improve patient flow and reduce waiting times. Improving timeliness may also contribute to a better **patient experience and satisfaction score**, which averaged **4.99 out of 10**.
 
 ---
 
@@ -460,13 +470,11 @@ Sorted the **Day Name** column by a custom day-order column (Sort by Column) so 
 ### 🔶 Key Findings
 
 The busiest days were:
-
 - **Monday:** 1,377 patients
 - **Saturday:** 1,322 patients
 - **Tuesday:** 1,318 patients
 
 The busiest admission hours were:
-
 - **11 AM**
 - **1 PM**
 - **7 PM**
@@ -501,106 +509,6 @@ These patterns indicate that staffing and operational resources should be planne
 | **Patient Race** | Patient racial demographic |
 
 This table enables users to drill down into individual patient records and supports detailed operational analysis through dashboard filters and slicers.
-
----
-
-## Dashboard 4: Key Takeaways
-
-**Objective:** Summarize the major findings from the Emergency Room analysis and provide actionable insights to improve patient flow, resource allocation, and overall patient experience.
-
----
-
-### 🔶 Key Findings
-
-#### **1. Patient Volume**
-
-The Emergency Room dataset covers **19 months**, from **April 2023 to October 2024**, and contains **9,216 unique patients**.
-
-The overall patient volume indicates a consistent demand for emergency room services and highlights the importance of effective resource planning.
-
----
-
-#### **2. Patient Wait Time & Satisfaction**
-
-- **Average Wait Time:** 35.3 minutes
-- **Average Satisfaction Score:** 4.99 / 10
-
-The average wait time of **35.3 minutes** indicates an opportunity to improve patient flow and reduce waiting periods. The satisfaction score of **4.99 out of 10** also indicates that patient experience can be improved.
-
-Reducing waiting time and improving service efficiency could have a positive impact on overall patient satisfaction.
-
----
-
-#### **3. Department Referrals**
-
-A significant number of patients (**5,400**) did not require a department referral.
-
-Among the referred patients, the most common referrals were:
-
-- **General Practice:** 1,840 patients
-- **Orthopedics:** 995 patients
-- **Physiotherapy:** 276 patients
-- **Cardiology:** 248 patients
-
-General Practice and Orthopedics account for a substantial share of department referrals, indicating that these departments may require adequate staffing and resource availability during high-demand periods.
-
----
-
-#### **4. Peak Busy Periods**
-
-The busiest days were:
-
-- **Monday:** 1,377 patients
-- **Saturday:** 1,322 patients
-- **Tuesday:** 1,318 patients
-
-The busiest admission hours were:
-
-- **11 AM**
-- **1 PM**
-- **7 PM**
-- **11 PM**
-
-These patterns indicate that staffing and operational resources should be planned according to patient arrival trends rather than being distributed evenly throughout the day.
-
----
-
-#### **5. Patient Demographics**
-
-The **30–39 years** age group recorded the highest number of patients with **1,200 visits**, followed by:
-
-- **20–29 years:** 1,188 patients
-- **40–49 years:** Significant patient volume
-
-The dashboard also provides insights into **gender and racial distribution**, helping stakeholders understand the demographic composition of ER visitors.
-
----
-
-#### **6. Race Distribution**
-
-The largest racial groups recorded were:
-
-- **White:** 2,571 patients
-- **African American:** 1,951 patients
-- **Two or More Races:** 1,557 patients
-- **Asian:** 1,060 patients
-
-A significant number of patients (**1,030**) did not identify or provide a race category.
-
-This demographic information can help stakeholders understand patient composition and support more informed healthcare service planning.
-
----
-
-#### **7. Admission Patterns**
-
-The ER recorded almost an equal split between admitted and non-admitted patients:
-
-- **Admitted:** 4,612 patients
-- **Not Admitted:** 4,604 patients
-
-Approximately **50% of ER patients were admitted**, while the remaining patients were treated and released.
-
-This near-even distribution highlights the importance of maintaining sufficient capacity for both emergency treatment and inpatient admissions.
 
 ---
 
