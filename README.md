@@ -1,21 +1,29 @@
-<img width="1005" height="62" alt="image" src="https://github.com/user-attachments/assets/debea6be-111b-47f9-a94b-04dd7ef9f46f" /># EMERGENCY ROOM ANALYSIS DASHBOARD | POWER BI
+# 🩺 Hospital Emergency Room Analysis Dashboard | Power Bi
 
-## PROJECT OVERVIEW:
-This project presents an interactive Emergency Room (ER) Analysis Dashboard built in Power BI using patient data from April 2023 to October 2024. The dashboard helps monitor hospital performance by tracking patient volume, wait times, satisfaction, admissions, referrals, and demographic trends to support data driven operational decisions.
+## 📌 Project Overview:
 
-## OBJECTIVES:
+This project presents an interactive **Hospital Emergency Room Analysis Dashboard** developed in **Power BI** using patient data from **April 2023 to October 2024**. The project analyzes **9,216 unique patient records** to provide a detailed view of Emergency Room operations, including **patient volume, wait times, patient satisfaction, admission patterns, department referrals, patient demographics, and peak admission periods**.
+
+The dashboard is designed across multiple views to analyze both overall trends and patient-level details. It includes **Monthly View, Consolidated View, Patient Details, and Key Takeaways**, allowing users to monitor KPIs, compare admission and referral patterns, analyze patient demographics, identify busy days and hours, and evaluate the percentage of patients seen within the **30-minute target wait time**.
+
+The analysis combines **Power Query for data cleaning and transformation, DAX for calculations and KPIs, and Power BI visualizations** to turn the raw patient data into meaningful operational insights. The final dashboard helps identify areas such as **high patient volumes, longer waiting times, referral demand, patient satisfaction, and admission patterns**, supporting data-driven decisions for improving **patient flow, resource allocation, and patient experience**.
+
+## 🎯 Objectives:
+
 - Analyze emergency room patient flow and hospital performance.
-- Monitor key performance indicators (KPIs).
+- Monitor key performance indicators (KPIs), including patient volume, average wait time, satisfaction score, and patient referrals.
 - Identify peak patient arrival days and hours.
-- Understand patient demographics and referral patterns.
-- Provide insights to improve resource allocation and patient experience.
+- Analyze patient admission patterns and the percentage of patients seen within the 30-minute target.
+- Understand patient demographics, including age, gender, and race distribution.
+- Analyze department referral patterns to identify areas with higher patient demand.
+- Provide actionable insights to improve patient flow, resource allocation, and patient experience.
 
-## Data Transformation & Cleaning (Power Query)
+## 🔄 Data Transformation & Cleaning (Power Query)
 
 The first step was to load the raw data into **Power Query** for transformation and cleaning.
 
 
-### 🔶 Data Quality Check
+### 🔷 Data Quality Check
 
 - Checked data quality for the **Patient ID** column — it should be **100% distinct and 100% unique**.
 - **Valid Values:** Verified that the data contains valid and correctly formatted values.
@@ -26,7 +34,7 @@ The first step was to load the raw data into **Power Query** for transformation 
 
 ---
 
-### 🔶 Data Cleaning
+### 🔷 Data Cleaning
 
 - Identified and reviewed errors and empty values.
 - Used **Replace Values** to correct inconsistent or incorrect data.
@@ -51,7 +59,7 @@ The source data contained only `M` and `F` abbreviations. Used **Replace Values*
 
 ---
 
-### 🔶 Creating a Dynamic Calendar (Date) Table
+### 🔷 Creating a Dynamic Calendar (Date) Table
 
 The hospital dataset may contain missing dates, which can lead to inaccurate Time Intelligence calculations. Creating a dedicated **Calendar Table** ensures continuous dates and enables functions like YTD, MTD, PYTD, and YoY to work correctly.
 
@@ -64,32 +72,32 @@ Date Table = CALENDAR(MIN('Hospital ER_Data'[Patient Admission Date]), MAX('Hosp
 
 **Step 2 — Create Date Attributes**
 
-🔶 **Day Name**
+🔷 **Day Name**
 ```DAX
 Day Name = FORMAT('Date Table'[Date], "ddd")
 ```
 
-🔶 **Year**
+🔷 **Year**
 ```DAX
 Year = YEAR('Date Table'[Date])
 ```
 
-🔶 **Week Day**
+🔷 **Week Day**
 ```DAX
 Week Day = WEEKDAY('Date Table'[Date], 2)
 ```
 
-🔶 **Month Number**
+🔷 **Month Number**
 ```DAX
 Month Number = MONTH('Date Table'[Date])
 ```
 
-🔶 **Month Name**
+🔷 **Month Name**
 ```DAX
 Month Name = FORMAT('Date Table'[Date], "mmm")
 ```
 
-🔶 **Month & Year**
+🔷 **Month & Year**
 ```DAX
 Month & Year = 'Date Table'[Month Name] & " " & 'Date Table'[Year]
 ```
@@ -106,15 +114,19 @@ This relationship enables all Time Intelligence functions to calculate correctly
 
 ---
 
-## KPI Requirements & DAX Measures
+# 📊 Dashboard 1: Monthly View
 
-To enhance operational efficiency and provide actionable insights into emergency room performance, this dashboard tracks four core KPIs — enabling stakeholders to make data-driven decisions regarding patient management and service optimization.
+**Objective:** Monitor key metrics and trends on a month-by-month basis to identify patterns and areas for improvement.
 
-Each KPI is paired with a **daily trend (area sparkline)** to help identify patterns, peak periods, and operational anomalies.
+## 📌 KPI Requirements & DAX Measures
+
+- To enhance operational efficiency and provide actionable insights into emergency room performance, this dashboard tracks four core KPIs — enabling stakeholders to make data-driven decisions regarding patient management and service optimization.
+
+- Each KPI is paired with a **daily trend (area sparkline)** to help identify patterns, peak periods, and operational anomalies.
 
 ---
 
-### 🔶 KPI 1: Number of Patients
+### 1️⃣ Number of Patients
 
 Measures the total number of patients visiting the ER daily.
 
@@ -132,7 +144,7 @@ No of Patients = DISTINCTCOUNT('Hospital ER_Data'[Patient Id])
 
 ---
 
-### 🔶 KPI 2: Average Wait Time
+### 2️⃣ Average Wait Time
 
 Calculates the average time patients wait before being attended to by a medical professional.
 
@@ -150,7 +162,7 @@ Avg Wait Time = FORMAT(AVERAGE('Hospital ER_Data'[Patient Waittime]), "0.0")
 
 ---
 
-### 🔶 KPI 3: Patient Satisfaction Score
+### 3️⃣ Patient Satisfaction Score
 
 Analyzes the average satisfaction score of patients daily to evaluate quality of service.
 
@@ -168,7 +180,7 @@ Satisfaction Score = AVERAGE('Hospital ER_Data'[Patient Satisfaction Score])
 
 ---
 
-### 🔶 KPI 4: Number of Patients Referred
+### 4️⃣ Number of Patients Referred
 
 Counts the number of patients referred to specific departments from the ER each day.
 
@@ -186,11 +198,8 @@ No. of Patients Referred = CALCULATE(COUNTROWS('Hospital ER_Data'), 'Hospital ER
 
 ---
 
-## Dashboard 1: Monthly View
+## 📌 Charts to Develop
 
-**Objective:** Monitor key metrics and trends on a month-by-month basis to identify patterns and areas for improvement.
-
-**Charts to Develop:**
 1. Patient Admission Status — Track admitted vs. non-admitted patients.
 2. Patient Age Distribution — Group patients by 10-year age intervals.
 3. Department Referrals — Analyze referral trends across different departments.
@@ -200,7 +209,7 @@ No. of Patients Referred = CALCULATE(COUNTROWS('Hospital ER_Data'), 'Hospital ER
 7. Time Analysis — Assess patient volume by day and hour.
 
 ---
-
+   
 ### 1️⃣ Patient Admission Status: Admitted vs Non-Admitted patients
 
 **Chart Type:** Matrix + Bar Chart
@@ -225,7 +234,7 @@ A **bar chart** was added after the matrix to visualize No. of Patients by Admis
 - **X-Axis:** No. of Patients
 - **Y-Axis:** Admission Status
 
-### 🔶 Key Findings
+### 🌟 Key Findings
 
 The ER recorded almost an equal split between admitted and non-admitted patients:
 
@@ -275,7 +284,7 @@ Applied gradient color formatting so that higher age groups appear darker and lo
 - **Format Style:** Gradient
 - **Field Basis:** No. of Patients
 
-### 🔶 Key Findings
+### 🌟 Key Findings
 
 The **30–39 years** age group recorded the highest number of patients with **1,200 visits**, followed by:
 
@@ -305,7 +314,7 @@ Applied gradient color formatting so that departments with higher referral count
 - **Format Style:** Gradient
 - **Field Basis:** No. of Patients
 
-### 🔶 Key Findings
+### 🌟 Key Findings
 
 A significant number of patients (**5,400**) did not require a department referral.
 
@@ -338,7 +347,7 @@ Wait Time Status = IF('Hospital ER_Data'[Patient Waittime] <= 30, "Within Target
 - **Legend:** Wait Time Status
 - **Values:** No. of Patients
 
-### 🔶 Key Findings
+### 🌟 Key Findings
 
 - **Average Wait Time:** 35.3 minutes
 - **Target Wait Time:** 30 minutes
@@ -368,7 +377,7 @@ The donut chart provides a clear view of the proportion of patients across diffe
 - **Legend:** Patient Gender
 - **Values:** No. of Patients
 
-### 🔶 Key Findings
+### 🌟 Key Findings
 ---
 
 ### 6️⃣ Racial Demographics: Analyze patient data by race
@@ -385,7 +394,7 @@ The clustered bar chart makes it easy to compare patient volumes across racial c
 - **X-Axis:** No. of Patients
 - **Y-Axis:** Patient Race
 
-### 🔶 Key Findings
+### 🌟 Key Findings
 
 The largest racial groups recorded were:
 
@@ -467,7 +476,7 @@ Sorted the **Day Name** column by a custom day-order column (Sort by Column) so 
 - **X-Axis:** Day Name
 - **Y-Axis:** No. of Patients
 
-### 🔶 Key Findings
+### 🌟 Key Findings
 
 The busiest days were:
 - **Monday:** 1,377 patients
@@ -484,7 +493,7 @@ These patterns indicate that staffing and operational resources should be planne
 
 ---
 
-## Dashboard 3: Patient Details
+## 📊 Dashboard 2: Patient Details
 
 **Objective:** Provide granular, patient-level information for detailed analysis, record verification, and operational troubleshooting by displaying essential patient details in a comprehensive table for filtering and analysis of individual ER visits.
 
@@ -512,7 +521,7 @@ This table enables users to drill down into individual patient records and suppo
 
 ---
 
-### 📌 Business Insights & Recommendations
+### 💡 Business Insights & Recommendations
 
 Based on the analysis, the following areas can help improve Emergency Room operations:
 
