@@ -236,14 +236,14 @@ A **bar chart** was added after the matrix to visualize No. of Patients by Admis
 
 ### 🌟 Key Findings
 
-The ER recorded almost an equal split between admitted and non-admitted patients:
+- The ER recorded almost an equal split between admitted and non-admitted patients:
 
-- **Admitted:** 4,612 patients
-- **Not Admitted:** 4,604 patients
+  - **Admitted:** 4,612 patients
+  - **Not Admitted:** 4,604 patients
 
-Approximately **50% of ER patients were admitted**, while the remaining patients were treated and released.
+- Approximately **50% of ER patients were admitted**, while the remaining patients were treated and released.
 
-This near-even distribution highlights the importance of maintaining sufficient capacity for both emergency treatment and inpatient admissions.
+- This near-even distribution highlights the importance of maintaining sufficient capacity for both emergency treatment and inpatient admissions.
 
 ---
 
@@ -280,18 +280,18 @@ SWITCH(
 - **Y-Axis:** No. of Patients
 
 **Conditional Formatting (Gradient):**
-Applied gradient color formatting so that higher age groups appear darker and lower age groups appear lighter, making the distribution visually intuitive.
-- **Format Style:** Gradient
-- **Field Basis:** No. of Patients
+- Applied gradient color formatting so that higher age groups appear darker and lower age groups appear lighter, making the distribution visually intuitive.
+  - **Format Style:** Gradient
+  - **Field Basis:** No. of Patients
 
 ### 🌟 Key Findings
 
-The **30–39 years** age group recorded the highest number of patients with **1,200 visits**, followed by:
+- The **30–39 years** age group recorded the highest number of patients with **1,200 visits**, followed by:
 
-- **20–29 years:** 1,188 patients
-- **40–49 years:** Significant patient volume
+  - **20–29 years:** 1,188 patients
+  - **40–49 years:** Significant patient volume
 
-The dashboard also provides insights into **gender and racial distribution**, helping stakeholders understand the demographic composition of ER visitors.
+- The dashboard also provides insights into **gender and racial distribution**, helping stakeholders understand the demographic composition of ER visitors.
 
 ---
 
@@ -316,16 +316,15 @@ Applied gradient color formatting so that departments with higher referral count
 
 ### 🌟 Key Findings
 
-A significant number of patients (**5,400**) did not require a department referral.
+- A significant number of patients (**5,400**) did not require a department referral.
 
-Among the referred patients, the most common referrals were:
+- Among the referred patients, the most common referrals were:
+  - **General Practice:** 1,840 patients
+  - **Orthopedics:** 995 patients
+  - **Physiotherapy:** 276 patients
+  - **Cardiology:** 248 patients
 
-- **General Practice:** 1,840 patients
-- **Orthopedics:** 995 patients
-- **Physiotherapy:** 276 patients
-- **Cardiology:** 248 patients
-
-General Practice and Orthopedics account for a substantial share of department referrals, indicating that these departments may require adequate staffing and resource availability during high demand periods.
+- General Practice and Orthopedics account for a substantial share of department referrals, indicating that these departments may require adequate staffing and resource availability during high demand periods.
 
 ---
 
@@ -349,17 +348,17 @@ Wait Time Status = IF('Hospital ER_Data'[Patient Waittime] <= 30, "Within Target
 
 ### 🌟 Key Findings
 
-- **Average Wait Time:** 35.3 minutes
-- **Target Wait Time:** 30 minutes
-
-The timeliness analysis shows that the majority of patients were **not seen within the 30-minute target** in both years.
-
+- The timeliness analysis shows that the majority of patients were **not seen within the 30-minute target** in both years.
+  - **Average Wait Time:** 35.3 minutes
+  - **Target Wait Time:** 30 minutes
+    
 - **2023:** 42% of patients were seen within the target time, while **58% exceeded the 30-minute target**.
+  
 - **2024:** 39.5% of patients were seen within the target time, while **60.5% exceeded the 30-minute target**.
 
-The percentage of patients meeting the target **decreased from 42% in 2023 to 39.5% in 2024**, while the percentage missing the target increased from **58% to 60.5%**.
+- The percentage of patients meeting the target **decreased from 42% in 2023 to 39.5% in 2024**, while the percentage missing the target increased from **58% to 60.5%**.
 
-With an overall average wait time of **35.3 minutes**, the results indicate an opportunity to improve patient flow and reduce waiting times. Improving timeliness may also contribute to a better **patient experience and satisfaction score**, which averaged **4.99 out of 10**.
+- With an overall average wait time of **35.3 minutes**, the results indicate an opportunity to improve patient flow and reduce waiting times. Improving timeliness may also contribute to a better **patient experience and satisfaction score**, which averaged **4.99 out of 10**.
 
 ---
 
@@ -396,16 +395,16 @@ The clustered bar chart makes it easy to compare patient volumes across racial c
 
 ### 🌟 Key Findings
 
-The largest racial groups recorded were:
+- The largest racial groups recorded were:
 
-- **White:** 2,571 patients
-- **African American:** 1,951 patients
-- **Two or More Races:** 1,557 patients
-- **Asian:** 1,060 patients
+  - **White:** 2,571 patients
+  - **African American:** 1,951 patients
+  - **Two or More Races:** 1,557 patients
+  - **Asian:** 1,060 patients
 
-A significant number of patients (**1,030**) did not identify or provide a race category.
+- A significant number of patients (**1,030**) did not identify or provide a race category.
 
-This demographic information can help stakeholders understand patient composition and support more informed healthcare service planning.
+- This demographic information can help stakeholders understand patient composition and support more informed healthcare service planning.
 
 ---
 
@@ -478,18 +477,18 @@ Sorted the **Day Name** column by a custom day-order column (Sort by Column) so 
 
 ### 🌟 Key Findings
 
-The busiest days were:
-- **Monday:** 1,377 patients
-- **Saturday:** 1,322 patients
-- **Tuesday:** 1,318 patients
+- The busiest days were:
+  - **Monday:** 1,377 patients
+  - **Saturday:** 1,322 patients
+  - **Tuesday:** 1,318 patients
 
-The busiest admission hours were:
-- **11 AM**
-- **1 PM**
-- **7 PM**
-- **11 PM**
+- The busiest admission hours were:
+  - **11 AM**
+  - **1 PM**
+  - **7 PM**
+  - **11 PM**
 
-These patterns indicate that staffing and operational resources should be planned according to patient arrival trends rather than being distributed evenly throughout the day.
+- These patterns indicate that staffing and operational resources should be planned according to patient arrival trends rather than being distributed evenly throughout the day.
 
 ---
 
