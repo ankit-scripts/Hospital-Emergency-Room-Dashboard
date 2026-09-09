@@ -1,4 +1,4 @@
-# EMERGENCY ROOM ANALYSIS DASHBOARD | POWER BI
+<img width="1005" height="62" alt="image" src="https://github.com/user-attachments/assets/debea6be-111b-47f9-a94b-04dd7ef9f46f" /># EMERGENCY ROOM ANALYSIS DASHBOARD | POWER BI
 
 ## PROJECT OVERVIEW:
 This project presents an interactive Emergency Room (ER) Analysis Dashboard built in Power BI using patient data from April 2023 to October 2024. The dashboard helps monitor hospital performance by tracking patient volume, wait times, satisfaction, admissions, referrals, and demographic trends to support data driven operational decisions.
@@ -201,7 +201,7 @@ No. of Patients Referred = CALCULATE(COUNTROWS('Hospital ER_Data'), 'Hospital ER
 
 ---
 
-### 🔶 1. Patient Admission Status
+### 1️⃣ Patient Admission Status: Admitted vs Non-Admitted patients
 
 **Chart Type:** Matrix + Bar Chart
 
@@ -238,7 +238,7 @@ This near-even distribution highlights the importance of maintaining sufficient 
 
 ---
 
-### 🔶 2. Patient Age Distribution
+### 2️⃣ Patient Age Distribution: Patients by 10 year age intervals
 
 **Chart Type:** Clustered Column Chart
 
@@ -286,7 +286,7 @@ The dashboard also provides insights into **gender and racial distribution**, he
 
 ---
 
-### 🔶 3. Department Referrals
+### 3️⃣ Department Referrals: Referral trends across different departments.
 
 **Chart Type:** Clustered Bar Chart
 
@@ -320,7 +320,7 @@ General Practice and Orthopedics account for a substantial share of department r
 
 ---
 
-### 🔶 4. Timeliness - Patients Seen Under 30 Minutes
+### 4️⃣ Timeliness: The percentage of patients seen within 30 minutes.
 
 **Chart Type:** Donut Chart
 
@@ -354,7 +354,7 @@ With an overall average wait time of **35.3 minutes**, the results indicate an o
 
 ---
 
-### 🔶 5. Gender Analysis: Visualize patient distribution by gender.
+### 5️⃣ Gender Analysis: Visualize patient distribution by gender.
 
 **Chart Type:** Donut Chart
 
@@ -371,7 +371,7 @@ The donut chart provides a clear view of the proportion of patients across diffe
 ### 🔶 Key Findings
 ---
 
-### 🔶 6. Racial Demographics
+### 6️⃣ Racial Demographics: Analyze patient data by race
 
 **Chart Type:** Clustered Bar Chart
 
@@ -400,7 +400,7 @@ This demographic information can help stakeholders understand patient compositio
 
 ---
 
-### 🔶 7. Time Analysis — Patient Volume by Day and Hour
+### 7️⃣ Time Analysis: Patient Volume by Day and Hour
 
 **Chart Type:** Matrix + Stacked Column Chart
 
@@ -512,7 +512,7 @@ This table enables users to drill down into individual patient records and suppo
 
 ---
 
-### 🔶 Business Insights & Recommendations
+### 📌 Business Insights & Recommendations
 
 Based on the analysis, the following areas can help improve Emergency Room operations:
 
@@ -530,7 +530,7 @@ Based on the analysis, the following areas can help improve Emergency Room opera
 
 ---
 
-### 🔶 Overall Summary
+### 📌 Overall Summary
 
 The analysis shows that the Emergency Room handles a **high volume of patients**, with an average wait time of **35.3 minutes** and an average satisfaction score of **4.99/10**. General Practice and Orthopedics are the most common referral departments, while **Monday, Saturday, and Tuesday** experience the highest patient volumes.
 
