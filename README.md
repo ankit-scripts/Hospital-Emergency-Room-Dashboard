@@ -25,7 +25,7 @@ The first step was to load the raw data into **Power Query** for transformation 
 
 ### 🔷 Data Quality Check
 
-- Checked data quality for the **Patient ID** column — it should be **100% distinct and 100% unique**.
+- Checked data quality for the **Patient ID** column - it should be **100% distinct and 100% unique**.
 - **Valid Values:** Verified that the data contains valid and correctly formatted values.
 - **Error Values:** Identified and reviewed any errors present in the data.
 - **Empty Values:** Checked for blank or missing values that may affect the analysis.
@@ -63,46 +63,48 @@ The source data contained only `M` and `F` abbreviations. Used **Replace Values*
 
 The hospital dataset may contain missing dates, which can lead to inaccurate Time Intelligence calculations. Creating a dedicated **Calendar Table** ensures continuous dates and enables functions like YTD, MTD, PYTD, and YoY to work correctly.
 
-**Step 1 — Create the Date Table**
+#### 🔷 Step 1: Create the Date Table
 `Modeling → New Table`
 
 ```DAX
 Date Table = CALENDAR(MIN('Hospital ER_Data'[Patient Admission Date]), MAX('Hospital ER_Data'[Patient Admission Date]))
 ```
+---
 
-**Step 2 — Create Date Attributes**
+#### 🔷 Step 2: Create Date Attributes
 
-🔷 **Day Name**
+- **Day Name**
 ```DAX
 Day Name = FORMAT('Date Table'[Date], "ddd")
 ```
 
-🔷 **Year**
+- **Year**
 ```DAX
 Year = YEAR('Date Table'[Date])
 ```
 
-🔷 **Week Day**
+- **Week Day**
 ```DAX
 Week Day = WEEKDAY('Date Table'[Date], 2)
 ```
 
-🔷 **Month Number**
+- **Month Number**
 ```DAX
 Month Number = MONTH('Date Table'[Date])
 ```
 
-🔷 **Month Name**
+- **Month Name**
 ```DAX
 Month Name = FORMAT('Date Table'[Date], "mmm")
 ```
 
-🔷 **Month & Year**
+- **Month & Year**
 ```DAX
 Month & Year = 'Date Table'[Month Name] & " " & 'Date Table'[Year]
 ```
+---
 
-**Step 3 — Data Modeling**
+#### 🔷 Step 3: Data Modeling
 
 Created a relationship between the **Date Table** and the **Hospital ER Data** table:
 
@@ -120,7 +122,7 @@ This relationship enables all Time Intelligence functions to calculate correctly
 
 ## 📌 KPI Requirements & DAX Measures
 
-- To enhance operational efficiency and provide actionable insights into emergency room performance, this dashboard tracks four core KPIs — enabling stakeholders to make data-driven decisions regarding patient management and service optimization.
+- To enhance operational efficiency and provide actionable insights into emergency room performance, this dashboard tracks four core KPIs enabling stakeholders to make data-driven decisions regarding patient management and service optimization.
 
 - Each KPI is paired with a **daily trend (area sparkline)** to help identify patterns, peak periods, and operational anomalies.
 
@@ -200,13 +202,13 @@ No. of Patients Referred = CALCULATE(COUNTROWS('Hospital ER_Data'), 'Hospital ER
 
 ## 📌 Charts to Develop
 
-1. Patient Admission Status — Track admitted vs. non-admitted patients.
-2. Patient Age Distribution — Group patients by 10-year age intervals.
-3. Department Referrals — Analyze referral trends across different departments.
-4. Timeliness — Measure the percentage of patients seen within 30 minutes.
-5. Gender Analysis — Visualize patient distribution by gender.
-6. Racial Demographics — Analyze patient data by race.
-7. Time Analysis — Assess patient volume by day and hour.
+1. **Patient Admission Status:** Track admitted vs. non-admitted patients.
+2. **Patient Age Distribution:** Group patients by 10-year age intervals.
+3. **Department Referrals:** Analyze referral trends across different departments.
+4. **Timeliness:** Measure the percentage of patients seen within 30 minutes.
+5. **Gender Analysis:** Visualize patient distribution by gender.
+6. **Racial Demographics:** Analyze patient data by race.
+7. **Time Analysis:** Assess patient volume by day and hour.
 
 ---
    
@@ -230,14 +232,13 @@ Admission Status = IF('Hospital ER_Data'[Patient Admission Flag] = TRUE, "Admitt
   - Patient (No. of Patients)
   - % of Total (% No. of Patients)
 
-A **bar chart** was added after the matrix to visualize No. of Patients by Admission Status:
-- **X-Axis:** No. of Patients
-- **Y-Axis:** Admission Status
+- A **bar chart** was added after the matrix to visualize No. of Patients by Admission Status:
+  - **X-Axis:** No. of Patients
+  - **Y-Axis:** Admission Status
 
 ### 🌟 Key Findings
 
 - The ER recorded almost an equal split between admitted and non-admitted patients:
-
   - **Admitted:** 4,612 patients
   - **Not Admitted:** 4,604 patients
 
@@ -403,7 +404,6 @@ The clustered bar chart makes it easy to compare patient volumes across racial c
 ### 🌟 Key Findings
 
 - The largest racial groups recorded were:
-
   - **White:** 2,571 patients
   - **African American:** 1,951 patients
   - **Two or More Races:** 1,557 patients
@@ -425,15 +425,15 @@ The clustered bar chart makes it easy to compare patient volumes across racial c
 
 Assesses patient volume by day and hour to identify peak arrival times, helping optimize staffing and resource allocation.
 
-#### Supporting Columns
+#### 🔷 Supporting Columns
 
-A calculated column named **Admission Hour** was created to extract the hour from the admission timestamp.
+- A calculated column named **Admission Hour** was created to extract the hour from the admission timestamp.
 
 ```DAX
 Admission Hour = HOUR('Hospital ER_Data'[Patient Admission Date])
 ```
 
-A second calculated column named **Wait Time Interval** was created to bucket hours into 2-hour intervals.
+- A second calculated column named **Wait Time Interval** was created to bucket hours into 2-hour intervals.
 
 ```DAX
 Wait Time Interval = 
@@ -457,7 +457,7 @@ SWITCH(
 
 ---
 
-#### 🔸(i) Matrix - Hourly Distribution by Day
+#### 🔹(i) Matrix: Hourly Distribution by Day
 
 <img width="350" alt="image" src="https://github.com/user-attachments/assets/9b77683e-2a8c-4c94-a6e7-6c5db67db350" />
 
@@ -468,11 +468,10 @@ SWITCH(
 - **Columns:** Day Name
 - **Values:** No. of Patients
 
-**Sorting:**
-Sorted the **Day Name** column by a custom day-order column (Sort by Column) so days appear in chronological order — Monday through Sunday — instead of alphabetical order.
+**Sorting:** Sorted the **Day Name** column by a custom day-order column (Sort by Column) so days appear in chronological order — Monday through Sunday — instead of alphabetical order.
 
 
-#### 🔸(ii) Stacked Column Chart - Daily Volume
+#### 🔹(ii) Stacked Column Chart: Daily Volume
 
 <img width="350" alt="image" src="https://github.com/user-attachments/assets/0a9bf4d3-4504-4d7d-93c4-60c47e3a65db" />
 
@@ -550,5 +549,19 @@ Based on the analysis, the following areas can help improve Emergency Room opera
 The analysis shows that the Emergency Room handles a **high volume of patients**, with an average wait time of **35.3 minutes** and an average satisfaction score of **4.99/10**. General Practice and Orthopedics are the most common referral departments, while **Monday, Saturday, and Tuesday** experience the highest patient volumes.
 
 The near-equal split between admitted and non-admitted patients further emphasizes the need for effective capacity planning. Overall, the dashboard provides a data-driven view of **patient flow, operational efficiency, referral patterns, demographics, and admission trends**, helping stakeholders identify opportunities to improve staffing, reduce waiting times, optimize resources, and enhance patient care.
+
+---
+
+## Dashboard View :
+
+### Summary View:
+
+<img width="2794" height="1774" alt="image" src="https://github.com/user-attachments/assets/092fe4a8-2240-4665-8510-2375c895121a" />
+
+---
+
+### Details View:
+
+<img width="2792" height="1768" alt="image" src="https://github.com/user-attachments/assets/27c5550b-07b5-431e-a539-a349895e9ddd" />
 
 ---
