@@ -377,6 +377,13 @@ The donut chart provides a clear view of the proportion of patients across diffe
 - **Values:** No. of Patients
 
 ### 🌟 Key Findings
+
+- Male patients formed the majority in both years, increasing from 50.67% in the first year to 51.39% in the second year, while the Female share decreased from 49.15% to 48.28%.
+  
+- The overall gender distribution remained closely balanced, with Male and Female patients together accounting for almost the entire ER patient - population in both years.
+  
+- Not Confirmed records remained very low, at 0.18% in the first year and 0.33% in the second year, indicating that gender information was available for nearly all patients.
+  
 ---
 
 ### 6️⃣ Racial Demographics: Analyze patient data by race
