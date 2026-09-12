@@ -232,8 +232,8 @@ Admission Status = IF('Hospital ER_Data'[Patient Admission Flag] = TRUE, "Admitt
   - Patient (No. of Patients)
   - % of Total (% No. of Patients)
 
-- A **bar chart** was added after the matrix to visualize No. of Patients by Admission Status:
-  - **X-Axis:** No. of Patients
+A **bar chart** was added after the matrix to visualize No. of Patients by Admission Status:
+- **X-Axis:** No. of Patients
   - **Y-Axis:** Admission Status
 
 ### 🌟 Key Findings
@@ -280,15 +280,13 @@ SWITCH(
 - **X-Axis:** Age Group
 - **Y-Axis:** No. of Patients
 
-**Conditional Formatting (Gradient):**
-- Applied gradient color formatting so that higher age groups appear darker and lower age groups appear lighter, making the distribution visually intuitive.
-  - **Format Style:** Gradient
-  - **Field Basis:** No. of Patients
+**Conditional Formatting (Gradient):** Applied gradient color formatting so that higher age groups appear darker and lower age groups appear lighter, making the distribution visually intuitive.
+- **Format Style:** Gradient
+- **Field Basis:** No. of Patients
 
 ### 🌟 Key Findings
 
 - The **30–39 years** age group recorded the highest number of patients with **1,200 visits**, followed by:
-
   - **20–29 years:** 1,188 patients
   - **40–49 years:** Significant patient volume
 
