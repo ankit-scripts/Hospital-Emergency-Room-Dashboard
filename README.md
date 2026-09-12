@@ -234,7 +234,7 @@ Admission Status = IF('Hospital ER_Data'[Patient Admission Flag] = TRUE, "Admitt
 
 A **bar chart** was added after the matrix to visualize No. of Patients by Admission Status:
 - **X-Axis:** No. of Patients
-  - **Y-Axis:** Admission Status
+- **Y-Axis:** Admission Status
 
 ### 🌟 Key Findings
 
