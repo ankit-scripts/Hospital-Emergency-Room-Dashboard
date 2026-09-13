@@ -552,13 +552,13 @@ The near-equal split between admitted and non-admitted patients further emphasiz
 
 ## Dashboard View :
 
-### Summary View:
+### Monthly View:
 
 <img width="2794" height="1774" alt="image" src="https://github.com/user-attachments/assets/092fe4a8-2240-4665-8510-2375c895121a" />
 
 ---
 
-### Details View:
+### Patient Details:
 
 <img width="2792" height="1768" alt="image" src="https://github.com/user-attachments/assets/27c5550b-07b5-431e-a539-a349895e9ddd" />
 
