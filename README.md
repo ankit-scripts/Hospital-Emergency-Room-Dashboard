@@ -1,4 +1,4 @@
-# 🩺 Hospital Emergency Room Analysis Dashboard | Power Bi
+# 🩺 Hospital Emergency Room Analysis Dashboard | Power BI
 
 ## 📌 Project Overview:
 
