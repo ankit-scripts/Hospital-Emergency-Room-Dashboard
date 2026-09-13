@@ -4,7 +4,7 @@
 
 This project presents an interactive **Hospital Emergency Room Analysis Dashboard** developed in **Power BI** using patient data from **April 2023 to October 2024**. The project analyzes **9,216 unique patient records** to provide a detailed view of Emergency Room operations, including **patient volume, wait times, patient satisfaction, admission patterns, department referrals, patient demographics, and peak admission periods**.
 
-The dashboard is designed across multiple views to analyze both overall trends and patient-level details. It includes **Monthly View, Consolidated View, Patient Details, and Key Takeaways**, allowing users to monitor KPIs, compare admission and referral patterns, analyze patient demographics, identify busy days and hours, and evaluate the percentage of patients seen within the **30-minute target wait time**.
+The dashboard is designed across multiple views to analyze both overall trends and patient-level details. It includes **Monthly View, Consolidated View**, allowing users to monitor KPIs, compare admission and referral patterns, analyze patient demographics, identify busy days and hours, and evaluate the percentage of patients seen within the **30-minute target wait time**.
 
 The analysis combines **Power Query for data cleaning and transformation, DAX for calculations and KPIs, and Power BI visualizations** to turn the raw patient data into meaningful operational insights. The final dashboard helps identify areas such as **high patient volumes, longer waiting times, referral demand, patient satisfaction, and admission patterns**, supporting data-driven decisions for improving **patient flow, resource allocation, and patient experience**.
 
@@ -44,7 +44,7 @@ The first step was to load the raw data into **Power Query** for transformation 
 **Patient Full Name Column**
 Created a new column using *Add Column → Custom Column*:
 
-```DAX
+```M
 Patient Full Name = [Patient First Initial] & " " & [Patient Last Name]
 ```
 
@@ -200,7 +200,7 @@ No. of Patients Referred = CALCULATE(COUNTROWS('Hospital ER_Data'), 'Hospital ER
 
 ---
 
-## 📌 Charts to Develop
+## 📌 Charts & Visualizations
 
 1. **Patient Admission Status:** Track admitted vs. non-admitted patients.
 2. **Patient Age Distribution:** Group patients by 10-year age intervals.
@@ -220,7 +220,7 @@ No. of Patients Referred = CALCULATE(COUNTROWS('Hospital ER_Data'), 'Hospital ER
 
 <p>
 
-Since the `Patient Admission Flag` field only contains `True`/`False`, a measure was created to convert it into a readable **Admitted / Not Admitted** status.
+Since the `Patient Admission Flag` field only contains `True`/`False`, a **calculated column** was created to convert it into a readable **Admitted / Not Admitted** status.
 
 ```DAX
 Admission Status = IF('Hospital ER_Data'[Patient Admission Flag] = TRUE, "Admitted", "Not Admitted")
@@ -335,7 +335,7 @@ Applied gradient color formatting so that departments with higher referral count
 
 <p> 
 
-A measure was created to classify each patient visit based on whether they were seen within the 30-minute target.
+A **calculated column** was created to classify each patient visit based on whether they were seen within the 30 minute target.
 
 ```DAX
 Wait Time Status = IF('Hospital ER_Data'[Patient Waittime] <= 30, "Within Target", "Target Missed")
